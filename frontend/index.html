@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloc de Notas Móvil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Bloc de Notas</h1>
+    <!-- Botón crear nueva nota debajo del título -->
+    <div id="menuBarMobile">
+        <button id="newNoteBtn">agregar nota</button>
+         <button id="viewNotesBtn">ver notas</button>
+    </div>
+
+    <!-- Formulario de nota -->
+    <div id="noteFormContainer" style="display:none;">
+        <form id="noteForm">
+            <input type="hidden" id="noteId">
+            <input type="text" id="title" placeholder="Título" required>
+            <textarea id="content" placeholder="Escribe tu nota..." required></textarea>
+            <div class="formButtons">
+                <button type="submit">Guardar</button>
+                <button type="button" id="cancelBtn">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Listado de notas -->
+    <div id="notesContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

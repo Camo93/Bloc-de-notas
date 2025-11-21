@@ -1,5 +1,6 @@
 import Nota from '../models/Nota.js';
 
+//todas las notas
 export const obtenerNotas = async (req, res) => {
   try {
     const notas = await Nota.find();
@@ -9,7 +10,7 @@ export const obtenerNotas = async (req, res) => {
     res.status(500).json({ mensaje: "Error obteniendo notas" });
   }
 };
-
+//creacion notas
 export const crearNota = async (req, res) => {
   try {
     const nuevaNota = new Nota(req.body);
@@ -23,7 +24,7 @@ export const crearNota = async (req, res) => {
     res.status(500).json({ mensaje: "Error creando nota" });
   }
 };
-
+//editar notas
 export const editarNota = async (req, res) => {
   try {
     const notaEditada = await Nota.findByIdAndUpdate(
@@ -37,7 +38,7 @@ export const editarNota = async (req, res) => {
     res.status(500).json({ mensaje: "Error editando nota" });
   }
 };
-
+//borrar notas
 export const borrarNota = async (req, res) => {
   try {
     await Nota.findByIdAndDelete(req.params.id);
