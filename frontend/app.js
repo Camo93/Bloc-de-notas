@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const noteForm = document.getElementById("noteForm");
     const tituloInput = document.getElementById("title");
     const contenidoInput = document.getElementById("content");
+    const noteDiv = document.createElement("div");
+    noteDiv.classList.add("nota");
+
+
 
     // Variable de estado para edición
     let editingNoteId = null;

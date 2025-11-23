@@ -2,35 +2,54 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bloc de Notas Móvil</title>
+
+    <!-- Enlace al archivo CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Bloc de Notas</h1>
-    <!-- Botón crear nueva nota debajo del título -->
-    <div id="menuBarMobile">
-        <button id="newNoteBtn">agregar nota</button>
-         <button id="viewNotesBtn">ver notas</button>
-    </div>
+    <!-- CONTENEDOR PRINCIPAL: simula una app móvil con ancho limitado -->
+    <div id="appContainer">
 
-    <!-- Formulario de nota -->
-    <div id="noteFormContainer" style="display:none;">
-        <form id="noteForm">
-            <input type="hidden" id="noteId">
-            <input type="text" id="title" placeholder="Título" required>
-            <textarea id="content" placeholder="Escribe tu nota..." required></textarea>
-            <div class="formButtons">
-                <button type="submit">Guardar</button>
-                <button type="button" id="cancelBtn">Cancelar</button>
-            </div>
-        </form>
-    </div>
+        <!-- Título principal -->
+        <h1>Bloc de Notas</h1>
 
-    <!-- Listado de notas -->
-    <div id="notesContainer"></div>
+        <!-- Menú móvil: botones principales para crear y ver notas -->
+        <div id="menuBarMobile">
+            <button id="newNoteBtn">agregar nota</button>
+            <button id="viewNotesBtn">ver notas</button>
+        </div>
 
+        <!-- Contenedor del formulario (oculto por defecto) -->
+        <div id="noteFormContainer" style="display:none;">
+            <form id="noteForm">
+
+                <!-- ID usado solo cuando se edita una nota ya existente -->
+                <input type="hidden" id="noteId">
+
+                <!-- Campo de título -->
+                <input type="text" id="title" placeholder="Título" required>
+
+                <!-- Contenido de la nota -->
+                <textarea id="content" placeholder="Escribe tu nota..." required></textarea>
+
+                <!-- Botones del formulario -->
+                <div class="formButtons">
+                    <button type="submit">Guardar</button>
+                    <button type="button" id="cancelBtn">Cancelar</button>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- Listado de notas: aquí se van insertando dinámicamente desde app.js -->
+        <div id="notesContainer"></div>
+
+    </div> <!-- Cierre del contenedor principal -->
+
+    <!-- Archivo JavaScript de la aplicación -->
     <script src="app.js"></script>
 </body>
 </html>

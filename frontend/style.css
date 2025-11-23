@@ -1,3 +1,28 @@
+/* Centra todo el contenido dentro del body */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal tipo "app móvil" */
+#appContainer {
+    width: 100%;
+    max-width: 450px;      /* Esto limita el ancho (aspecto de teléfono) */
+    margin: 0 auto;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    background: #fafafa;
+    min-height: 100vh;     /* Se ajusta al alto de la ventana */
+
+    /* Opcional pero elegante: sombra suave */
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    border-radius: 12px;
+}
+
+/* Estilo del título */
 h1 {
     text-align: center;
     font-size: 28px;
@@ -5,15 +30,18 @@ h1 {
     margin-bottom: 20px;
     font-weight: bold;
 }
+
+/* Menú móvil: botón agregar/ver notas */
 #menuBarMobile {
     display: flex;
-    flex-direction: column; /* Esto los pone en vertical */
-    gap: 10px; /* Espacio entre botones */
+    flex-direction: column; /* Mantiene botones en vertical */
+    gap: 10px;
     width: 100%;
     max-width: 300px;
     margin: 20px auto;
 }
 
+/* Botones del menú */
 #menuBarMobile button {
     padding: 12px;
     font-size: 16px;
@@ -34,7 +62,7 @@ h1 {
     max-width: 350px;
 }
 
-/* El formulario en columna */
+/* Formulario de notas en diseño columna */
 #noteForm {
     display: flex;
     flex-direction: column;
@@ -45,7 +73,7 @@ h1 {
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-/* Inputs */
+/* Inputs y textarea */
 #noteForm input,
 #noteForm textarea {
     width: 100%;
@@ -56,18 +84,20 @@ h1 {
     box-sizing: border-box;
 }
 
+/* Altura del área de texto */
 #noteForm textarea {
     height: 100px;
     resize: none;
 }
 
-/* Botones del formulario */
+/* Contenedor de botones del formulario */
 .formButtons {
     display: flex;
     justify-content: space-between;
     gap: 10px;
 }
 
+/* Botones del formulario */
 .formButtons button {
     flex: 1;
     padding: 10px;
@@ -80,4 +110,49 @@ h1 {
 
 .formButtons button:hover {
     background: #d5d5d5;
+}
+
+/* Contenedor donde aparecen las notas */
+#notesContainer {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Tarjeta de cada nota */
+.nota {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+/* Título de la nota */
+.nota h3 {
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+/* Contenido de la nota */
+.nota p {
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+/* Botones dentro de cada nota (editar / eliminar) */
+.nota button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #e9e9e9;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.nota button:hover {
+    background: #d6d6d6;
 }
